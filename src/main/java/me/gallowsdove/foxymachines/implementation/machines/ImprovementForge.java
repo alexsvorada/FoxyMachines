@@ -56,9 +56,9 @@ public class ImprovementForge extends SlimefunItem implements EnergyNetComponent
 
     public ImprovementForge() {
         super(Items.MACHINES_ITEM_GROUP, Items.IMPROVEMENT_FORGE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                SlimefunItems.CARBONADO, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.CARBONADO,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.AUTO_ENCHANTER, SlimefunItems.ELECTRIC_MOTOR,
-                SlimefunItems.REINFORCED_PLATE, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.REINFORCED_PLATE
+                SlimefunItems.CARBONADO.item(), SlimefunItems.BLISTERING_INGOT_3.item(), SlimefunItems.CARBONADO.item(),
+                SlimefunItems.ELECTRIC_MOTOR.item(), SlimefunItems.AUTO_ENCHANTER.item(), SlimefunItems.ELECTRIC_MOTOR.item(),
+                SlimefunItems.REINFORCED_PLATE.item(), SlimefunItems.BLISTERING_INGOT_3.item(), SlimefunItems.REINFORCED_PLATE.item()
         });
 
 
@@ -199,7 +199,7 @@ public class ImprovementForge extends SlimefunItem implements EnergyNetComponent
                 progress.put(b, timeleft - 1);
             }
             else {
-                inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
+                inv.replaceExistingItem(22, CustomItemStack.create(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                 for (ItemStack output : processing.get(b).getOutput()) {
                     inv.pushItem(output.clone(), getOutputSlots());
@@ -226,7 +226,7 @@ public class ImprovementForge extends SlimefunItem implements EnergyNetComponent
             ItemStack item = menu.getItemInSlot(slot);
 
             if (item != null) {
-                if (SlimefunUtils.isItemSimilar(improvementCore, Items.IMPROVEMENT_CORE, true, false)) {
+                if (SlimefunUtils.isItemSimilar(improvementCore, Items.IMPROVEMENT_CORE.item(), true, false)) {
 
                     int tier = -1;
                     int index = -1;
@@ -274,14 +274,14 @@ public class ImprovementForge extends SlimefunItem implements EnergyNetComponent
         }
 
         for (int i : BORDER_IN) {
-            preset.addItem(i, new SlimefunItemStack("_UI_INPUT_SLOT", Material.CYAN_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, CustomItemStack.create(Material.CYAN_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
         }
 
         for (int i : BORDER_OUT) {
-            preset.addItem(i, new SlimefunItemStack("_UI_OUTPUT_SLOT", Material.ORANGE_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, CustomItemStack.create(Material.ORANGE_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, CustomItemStack.create(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : getOutputSlots()) {
             preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {

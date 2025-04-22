@@ -20,7 +20,7 @@ public class RemoteControllerListener implements Listener {
             item = e.getPlayer().getInventory().getItemInOffHand();
         }
 
-        if (item.getType() == Material.NAME_TAG && SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.REMOTE_CONTROLLER, false)) {
+        if (item.getType() == Material.NAME_TAG && SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.REMOTE_CONTROLLER.item(), false)) {
             e.setCancelled(true);
         }
     }

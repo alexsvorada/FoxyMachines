@@ -19,16 +19,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class CursedSword extends OnHitWeapon {
     public static final List<PotionEffect> EFFECTS = List.of(
-            new PotionEffect(PotionEffectType.SLOW, 80, 1, false, false),
+            new PotionEffect(PotionEffectType.SLOWNESS, 80, 1, false, false),
             new PotionEffect(PotionEffectType.BLINDNESS, 80, 20, false, false),
-            new PotionEffect(PotionEffectType.CONFUSION, 100, 3, false, false),
+            new PotionEffect(PotionEffectType.NAUSEA, 100, 3, false, false),
             new PotionEffect(PotionEffectType.WITHER, 80, 1, false, false));
 
     public CursedSword() {
         super(Items.WEAPONS_AND_ARMORS_ITEM_GROUP, Items.CURSED_SWORD, RecipeType.ANCIENT_ALTAR, new ItemStack[] {
-                Items.BLOOD, Items.CURSED_RABBIT_PAW, Items.BLOOD,
-                Items.MAGIC_LUMP_5, new ItemStack(Material.NETHERITE_SWORD), Items.MAGIC_LUMP_5,
-                Items.BLOOD, Items.BLOOD_INFUSED_SKULL, Items.BLOOD
+                Items.BLOOD.item(), Items.CURSED_RABBIT_PAW.item(), Items.BLOOD.item(),
+                Items.MAGIC_LUMP_5.item(), new ItemStack(Material.NETHERITE_SWORD), Items.MAGIC_LUMP_5.item(),
+                Items.BLOOD.item(), Items.BLOOD_INFUSED_SKULL.item(), Items.BLOOD.item()
         });
     }
 
@@ -37,7 +37,7 @@ public class CursedSword extends OnHitWeapon {
     public void onHit(EntityDamageByEntityEvent event, HumanEntity humanoid, LivingEntity entity) {
         // Life Steal I
         double health = humanoid.getHealth() + 1.25D;
-        double maxHealth = humanoid.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue();
+        double maxHealth = humanoid.getAttribute(Attribute.MAX_HEALTH).getValue();
         humanoid.setHealth(Math.min(health, maxHealth));
 
         // Armor Penetration I
@@ -62,7 +62,7 @@ public class CursedSword extends OnHitWeapon {
         if (random.nextInt(1000) < 25) {
             int result = random.nextInt(100);
             if (result < 20) {
-                humanoid.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 40, 10, false, false));
+                humanoid.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 40, 10, false, false));
             } else if (result < 40) {
                 humanoid.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 60, 10, false, false));
             } else if (result < 60) {
@@ -70,7 +70,7 @@ public class CursedSword extends OnHitWeapon {
             } else if (result < 80) {
                 humanoid.damage(event.getDamage() / 2);
             } else {
-                humanoid.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 150, 2, false, false));
+                humanoid.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 150, 2, false, false));
             }
         }
     }

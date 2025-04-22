@@ -39,9 +39,9 @@ public class GhostBlock extends SlimefunItem {
 
     public GhostBlock(SlimefunItemStack item) {
         super(Items.GHOST_BLOCKS_ITEM_GROUP, item, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                SlimefunItems.BILLON_INGOT, SlimefunItems.BILLON_INGOT, SlimefunItems.BILLON_INGOT,
-                SlimefunItems.MAGICAL_GLASS, new ItemStack(item.getType()), SlimefunItems.MAGICAL_GLASS,
-                SlimefunItems.BILLON_INGOT, SlimefunItems.BILLON_INGOT, SlimefunItems.BILLON_INGOT
+                SlimefunItems.BILLON_INGOT.item(), SlimefunItems.BILLON_INGOT.item(), SlimefunItems.BILLON_INGOT.item(),
+                SlimefunItems.MAGICAL_GLASS.item(), new ItemStack(item.getType()), SlimefunItems.MAGICAL_GLASS.item(),
+                SlimefunItems.BILLON_INGOT.item(), SlimefunItems.BILLON_INGOT.item(), SlimefunItems.BILLON_INGOT.item()
         });
 
         this.material = item.getType();

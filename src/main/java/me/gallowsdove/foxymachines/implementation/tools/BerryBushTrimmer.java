@@ -29,9 +29,9 @@ public class BerryBushTrimmer extends SlimefunItem {
 
     public BerryBushTrimmer() {
         super(Items.TOOLS_ITEM_GROUP, Items.BERRY_BUSH_TRIMMER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                null, SlimefunItems.DAMASCUS_STEEL_INGOT, null,
-                SlimefunItems.DAMASCUS_STEEL_INGOT, null, SlimefunItems.DAMASCUS_STEEL_INGOT,
-                new ItemStack(Material.STICK), SlimefunItems.DAMASCUS_STEEL_INGOT, null
+                null, SlimefunItems.DAMASCUS_STEEL_INGOT.item(), null,
+                SlimefunItems.DAMASCUS_STEEL_INGOT.item(), null, SlimefunItems.DAMASCUS_STEEL_INGOT.item(),
+                new ItemStack(Material.STICK), SlimefunItems.DAMASCUS_STEEL_INGOT.item(), null
         });
     }
 

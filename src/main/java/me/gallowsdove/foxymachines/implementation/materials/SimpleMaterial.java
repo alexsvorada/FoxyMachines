@@ -21,7 +21,7 @@ public class SimpleMaterial extends SimpleSlimefunItem<ItemUseHandler> implement
 
     @ParametersAreNonnullByDefault
     public SimpleMaterial(SubItemGroup subItemGroup, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int amount) {
-        super(subItemGroup, item, type, recipe, new SlimefunItemStack(item, amount));
+        super(subItemGroup, item, type, recipe, new SlimefunItemStack(item, amount).item());
     }
 
     @Nonnull

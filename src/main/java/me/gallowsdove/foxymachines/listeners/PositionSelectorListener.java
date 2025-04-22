@@ -21,7 +21,7 @@ public class PositionSelectorListener implements Listener {
         if (e.getAction() == Action.LEFT_CLICK_BLOCK && e.hasBlock()) {
             Player player = e.getPlayer();
             ItemStack item = player.getInventory().getItemInMainHand();
-            if (SlimefunUtils.isItemSimilar(item, Items.POSITION_SELECTOR, false, false) &&
+            if (SlimefunUtils.isItemSimilar(item, Items.POSITION_SELECTOR.item(), false, false) &&
                     ((Rechargeable) SlimefunItem.getByItem(item)).removeItemCharge(item, PositionSelector.COST) ) {
                 Block block = e.getClickedBlock();
                 SimpleLocation loc = new SimpleLocation(block, "primary_position");

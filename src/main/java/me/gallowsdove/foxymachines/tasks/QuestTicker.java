@@ -15,9 +15,9 @@ public class QuestTicker implements Runnable{
 
         if (random.nextInt(120) == 66) {
             for (Player p: Bukkit.getOnlinePlayers()) {
-                if (SlimefunUtils.containsSimilarItem(p.getInventory(), Items.CURSED_SWORD, false)) {
+                if (SlimefunUtils.containsSimilarItem(p.getInventory(), Items.CURSED_SWORD.item(), false)) {
                     QuestUtils.sendQuestLine(p, Items.CURSED_SWORD);
-                } else if (SlimefunUtils.containsSimilarItem(p.getInventory(), Items.CELESTIAL_SWORD, false)) {
+                } else if (SlimefunUtils.containsSimilarItem(p.getInventory(), Items.CELESTIAL_SWORD.item(), false)) {
                     QuestUtils.sendQuestLine(p, Items.CELESTIAL_SWORD);
                 }
             }

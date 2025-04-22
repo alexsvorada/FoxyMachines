@@ -14,9 +14,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PoseidonsFishingRodListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     private void onPlayerFish(PlayerFishEvent e) {
-        if (e.getCaught() instanceof Item item && SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.POSEIDONS_FISHING_ROD, false, false)) {
+        if (e.getCaught() instanceof Item item && SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.POSEIDONS_FISHING_ROD.item(), false, false)) {
             if (ThreadLocalRandom.current().nextInt(100) < 8) {
-                item.setItemStack(new SlimefunItemStack(Items.POSEIDONS_BLESSING, 1));
+                item.setItemStack(new SlimefunItemStack(Items.POSEIDONS_BLESSING, 1).item());
             }
         }
     }

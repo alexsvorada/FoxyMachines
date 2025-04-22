@@ -26,7 +26,7 @@ public class SimpleConsumable extends SimpleSlimefunItem<ItemUseHandler> {
 
     @ParametersAreNonnullByDefault
     public SimpleConsumable(SubItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, PotionEffect[] effects, int amount) {
-        super(itemGroup, item, recipeType, recipe, new SlimefunItemStack(item, amount));
+        super(itemGroup, item, recipeType, recipe, new SlimefunItemStack(item, amount).item());
         this.effects = effects;
     }
 

@@ -25,7 +25,7 @@ public class BowListener implements Listener {
     @EventHandler(ignoreCancelled = true)
     private void onShoot(@Nonnull EntityShootBowEvent e) {
         if (e.getEntity() instanceof HumanEntity && e.getProjectile() instanceof Arrow arrow &&
-                SlimefunUtils.isItemSimilar(e.getBow(), Items.ACRI_ARCUM, false, false)) {
+                SlimefunUtils.isItemSimilar(e.getBow(), Items.ACRI_ARCUM.item(), false, false)) {
             arrow.setVelocity(arrow.getVelocity().multiply(2));
             arrow.setGlowing(true);
             arrow.getPersistentDataContainer().set(KEY, PersistentDataType.SHORT, (short) 1);

@@ -48,9 +48,9 @@ public final class ForcefieldDome extends SlimefunItem implements EnergyNetCompo
 
     public ForcefieldDome() {
         super(Items.MACHINES_ITEM_GROUP, Items.FORCEFIELD_DOME, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-                Items.SWEETENED_SWEET_INGOT, Items.FORCEFIELD_STABILIZER, Items.SWEETENED_SWEET_INGOT,
-                Items.FORCEFIELD_STABILIZER, Items.FORCEFIELD_ENGINE, Items.FORCEFIELD_STABILIZER,
-                Items.SWEETENED_SWEET_INGOT, Items.FORCEFIELD_STABILIZER, Items.SWEETENED_SWEET_INGOT
+                Items.SWEETENED_SWEET_INGOT.item(), Items.FORCEFIELD_STABILIZER.item(), Items.SWEETENED_SWEET_INGOT.item(),
+                Items.FORCEFIELD_STABILIZER.item(), Items.FORCEFIELD_ENGINE.item(), Items.FORCEFIELD_STABILIZER.item(),
+                Items.SWEETENED_SWEET_INGOT.item(), Items.FORCEFIELD_STABILIZER.item(), Items.SWEETENED_SWEET_INGOT.item()
         });
 
         this.addItemHandler(onTick(), onPlace(), onUse(), onBreak());
@@ -116,7 +116,7 @@ public final class ForcefieldDome extends SlimefunItem implements EnergyNetCompo
     @Nonnull
     public BlockUseHandler onUse() {
         return e -> {
-            if (!SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.REMOTE_CONTROLLER, true, false)) {
+            if (!SlimefunUtils.isItemSimilar(e.getPlayer().getInventory().getItemInMainHand(), Items.REMOTE_CONTROLLER.item(), true, false)) {
                 Block b = e.getClickedBlock().get();
                 if (BlockStorage.getLocationInfo(b.getLocation(), "cooldown").equals("false")) {
                     String active = BlockStorage.getLocationInfo(b.getLocation(), "active");

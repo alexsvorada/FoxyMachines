@@ -21,9 +21,9 @@ public class PositionSelector extends SlimefunItem implements NotPlaceable, Rech
 
     public PositionSelector() {
         super(Items.TOOLS_ITEM_GROUP, Items.POSITION_SELECTOR, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                Items.SWEET_INGOT, Items.WIRELESS_TRANSMITTER, Items.SWEET_INGOT,
-                SlimefunItems.CORINTHIAN_BRONZE_INGOT, SlimefunItems.BIG_CAPACITOR, SlimefunItems.CORINTHIAN_BRONZE_INGOT,
-                Items.SWEET_INGOT, SlimefunItems.CORINTHIAN_BRONZE_INGOT, Items.SWEET_INGOT
+                Items.SWEET_INGOT.item(), Items.WIRELESS_TRANSMITTER.item(), Items.SWEET_INGOT.item(),
+                SlimefunItems.CORINTHIAN_BRONZE_INGOT.item(), SlimefunItems.BIG_CAPACITOR.item(), SlimefunItems.CORINTHIAN_BRONZE_INGOT.item(),
+                Items.SWEET_INGOT.item(), SlimefunItems.CORINTHIAN_BRONZE_INGOT.item(), Items.SWEET_INGOT.item()
         });
     }
 

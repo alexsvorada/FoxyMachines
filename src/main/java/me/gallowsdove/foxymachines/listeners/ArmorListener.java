@@ -16,7 +16,7 @@ public class ArmorListener implements Listener {
         if (e.getEntity() instanceof HumanEntity entity) {
             ItemStack item = entity.getInventory().getLeggings();
 
-            if (SlimefunUtils.isItemSimilar(item, Items.FIERY_LEGGINGS, false, false)) {
+            if (SlimefunUtils.isItemSimilar(item, Items.FIERY_LEGGINGS.item(), false, false)) {
                 e.getDamager().setFireTicks(100);
             }
         }
@@ -27,7 +27,7 @@ public class ArmorListener implements Listener {
         if (e.getCause() == EntityDamageEvent.DamageCause.FALL && e.getEntity() instanceof HumanEntity entity) {
             ItemStack item = entity.getInventory().getBoots();
 
-            if (SlimefunUtils.isItemSimilar(item, Items.LIGHT_BOOTS, false, false)) {
+            if (SlimefunUtils.isItemSimilar(item, Items.LIGHT_BOOTS.item(), false, false)) {
                 e.setCancelled(true);
             }
         }

@@ -19,9 +19,9 @@ public class GhostBlockRemover extends SlimefunItem {
 
     public GhostBlockRemover() {
         super(Items.TOOLS_ITEM_GROUP, Items.GHOST_BLOCK_REMOVER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                Items.DAMIENIUM, Items.DAMIENIUM, Items.DAMIENIUM,
-                Items.SWEET_INGOT, SlimefunItems.BASIC_CIRCUIT_BOARD, Items.SWEET_INGOT,
-                Items.DAMIENIUM, Items.DAMIENIUM, Items.DAMIENIUM
+                Items.DAMIENIUM.item(), Items.DAMIENIUM.item(), Items.DAMIENIUM.item(),
+                Items.SWEET_INGOT.item(), SlimefunItems.BASIC_CIRCUIT_BOARD.item(), Items.SWEET_INGOT.item(),
+                Items.DAMIENIUM.item(), Items.DAMIENIUM.item(), Items.DAMIENIUM.item()
         });
     }
 
@@ -43,7 +43,7 @@ public class GhostBlockRemover extends SlimefunItem {
                         "",
                         "&7An intangible block.");
 
-                block.getWorld().dropItemNaturally(block.getLocation(), stack);
+                block.getWorld().dropItemNaturally(block.getLocation(), stack.item());
                 block.remove();
             }
         };

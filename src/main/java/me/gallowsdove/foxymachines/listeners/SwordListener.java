@@ -57,11 +57,11 @@ public class SwordListener implements Listener {
         SlimefunItem sfItem = SlimefunItem.getByItem(inventory.getItemInMainHand());
 
         if (sfItem instanceof CursedSword) {
-            inventory.addItem(new SlimefunItemStack(Items.CURSED_SHARD, 1));
+            inventory.addItem(new SlimefunItemStack(Items.CURSED_SHARD, 1).item());
             p.sendMessage(ChatColor.RED + "The Cursed Sword is pleased.");
             Scheduler.run(20, () -> QuestUtils.sendQuestLine(p, Items.CURSED_SWORD));
         } else if (sfItem instanceof CelestialSword) {
-            inventory.addItem(new SlimefunItemStack(Items.CELESTIAL_SHARD, 1));
+            inventory.addItem(new SlimefunItemStack(Items.CELESTIAL_SHARD, 1).item());
             p.sendMessage(ChatColor.YELLOW + "The Celestial Sword is pleased.");
             Scheduler.run(20, () -> QuestUtils.sendQuestLine(p, Items.CELESTIAL_SWORD));
         }
